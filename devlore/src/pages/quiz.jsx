@@ -17,6 +17,30 @@ export default function Quiz() {
             setQuestions(res.data.results || []);
         });
     }, [url]);
+
+    const question = questions[current];
+    const answers = useMemo(() => {
+        if (!question) return [];
+        return [
+            ...question.incorrect_answers,
+            question.correct_answer,
+        ].sort(() => Math.random() - 0.5);
+    }, [question]);
+
+    if (!url) {
+        return (
+            <div className="min-h-screen flex flex-col items-center justify-center text-white gap-6 bg-black">
+                <h1 className="text-3xl font-bold font-['Newsreader']">No Quest Selected</h1>
+                <button
+                    className="px-6 py-3 bg-linear-to-r from-violet-500 to-blue-500 text-white font-semibold rounded-xl hover:from-violet-400 hover:to-blue-400 active:scale-95 transition-all"
+                    onClick={() => navigate("/quests")}
+                >
+                    Choose a Quest
+                </button>
+            </div>
+        );
+    }
+
     if (!questions.length) {
         return (
             <div className="min-h-screen flex items-center justify-center text-white text-2xl">
