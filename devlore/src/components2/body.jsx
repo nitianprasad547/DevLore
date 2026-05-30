@@ -16,7 +16,7 @@ export default function Body() {
     return (
         <div className="flex flex-col">
             <div className="font-['Newsreader'] text-3xl text-white px-[6.667%] pt-5 justify-center flex">
-                <h1>Select Your Next Quest</h1>
+                <h1>Select Your Quest</h1>
             </div>
             <div className="grid md:grid-cols-4 px-[6.667%] pt-5 gap-8 mb-20">
                 <Item

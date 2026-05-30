@@ -9,21 +9,18 @@ export default function Header() {
                     DevLore
                 </h1>
             </div>
-            <div className='w-[80%] flex flex-row'>
-                <div className="w-[75%] items-center flex justify-center font-medium text-[20px] font-serif gap-x-8">
+            <div className='w-full md:w-[80%] flex flex-row'>
+                <div className="w-[50%] md:w-[75%] items-center flex justify-center font-medium text-[20px] font-serif gap-x-8">
                 <Link to="/">
                     <button className="hover:text-cyan-300 hover:bg-white/10 hover:rounded-xl cursor-pointer hover:underline transition">Home</button>
                 </Link>
                 <Link to="/quests">
                     <button className="hover:text-cyan-300 hover:bg-white/10 hover:rounded-xl cursor-pointer hover:underline transition">Quests</button>
                 </Link>
-                <Link to="/leaderboard">
-                    <button className="hover:text-cyan-300 hover:bg-white/10 hover:rounded-xl cursor-pointer hover:underline transition">Leaderboard</button>
-                </Link>
             </div>
-            <div className='w-[25%] flex flex-row items-center gap-x-6 font-serif font-medium text-2xl justify-end'>
-                <p className='hidden md:block'>Prasad</p>
-                <img src={photo} className='w-8 h-8 rounded-2xl'/>
+            <div className='w-[50%] md:w-[25%] flex flex-row items-center gap-x-6 font-serif font-medium text-2xl justify-end'>
+                <p>Prasad</p>
+                <img src={photo} className=' w-8 h-8 rounded-2xl mr-6 md:mr-0'/>
             </div>
             </div>
         </div>
