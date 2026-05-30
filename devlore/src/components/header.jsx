@@ -15,7 +15,7 @@ export default function Header() {
                     <button className="hover:text-cyan-300 hover:bg-white/10 hover:rounded-xl cursor-pointer hover:underline transition">Home</button>
                 </Link>
                 <Link to="/quests">
-                    <button className="hover:text-cyan-300 hover:bg-white/10 hover:rounded-xl cursor-pointer hover:underline transition">Quotes</button>
+                    <button className="hover:text-cyan-300 hover:bg-white/10 hover:rounded-xl cursor-pointer hover:underline transition">Quests</button>
                 </Link>
                 <Link to="/leaderboard">
                     <button className="hover:text-cyan-300 hover:bg-white/10 hover:rounded-xl cursor-pointer hover:underline transition">Leaderboard</button>
