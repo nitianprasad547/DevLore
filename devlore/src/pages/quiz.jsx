@@ -67,15 +67,6 @@ export default function Quiz() {
             </div>
         );
     }
-
-    const question = questions[current];
-    const answers = useMemo(() => {
-        if (!question) return [];
-        return [
-            ...question.incorrect_answers,
-            question.correct_answer,
-        ].sort(() => Math.random() - 0.5);
-    }, [question]);
     const progress =
         ((current + 1) / questions.length) * 100;
     const handleAnswer = (answer) => {
@@ -89,7 +80,6 @@ export default function Quiz() {
         }, 800);
     };
     return (
-
         <div className="min-h-screen flex items-center justify-center px-6 py-10">
             <div className="w-full max-w-4xl bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8">
                 <div className="mb-8">
