@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import axios from 'axios';
 
 export default function Quiz() {
@@ -45,10 +45,13 @@ export default function Quiz() {
     }
 
     const question = questions[current];
-    const answers = [
-        ...question.incorrect_answers,
-        question.correct_answer,
-    ].sort(() => Math.random() - 0.5);
+    const answers = useMemo(() => {
+        if (!question) return [];
+        return [
+            ...question.incorrect_answers,
+            question.correct_answer,
+        ].sort(() => Math.random() - 0.5);
+    }, [question]);
     const progress =
         ((current + 1) / questions.length) * 100;
     const handleAnswer = (answer) => {
